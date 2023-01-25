@@ -39,7 +39,7 @@ async def callback_handler(callback: types.CallbackQuery):
 
         if callback.data == 'Give Card':
             hands, result = manage_data(callback, 'player')
-            add, kb = ('game', ikb_start) if result == 'Lose!' else ('card', ikb_dealing)
+            add, kb = ('game', ikb_next_game) if result == 'Lose!' else ('card', ikb_dealing)
 
         if callback.data == 'Enough Cards':
             hands, result = manage_data(callback, 'dealer')

@@ -148,7 +148,7 @@ def leaderboard():
     df['WR, %'] = round(df['Wins |']/df['Games |']*100)
     df = (
         df.drop('Loses |', axis=1).head(10)
-        .sort_values('Wins |', ascending=True)
+        .sort_values('Wins |', ascending=False)
         .to_string(index=False, col_space=[15,8,8,8,8], justify='end')
         )
     return df
